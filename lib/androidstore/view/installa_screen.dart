@@ -35,10 +35,16 @@ class _InstalledScreenState extends State<InstalledScreen> {
           SizedBox(height: 20),
           ListTile(
             title:
-                Row(mainAxisAlignment: MainAxisAlignment.start,children: [Text("${providerF!.topList[index].name}",style: TextStyle(fontSize: 25,color: Colors.white70)),
-                  SizedBox(height: 5),
-                  Text("\n\n${providerF!.topList[index].catg}",style: TextStyle(fontSize: 15,color: Colors.white54))
-                ]),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(children: [Text("${providerF!.topList[index].name}",style: TextStyle(fontSize: 25,color: Colors.white70)),
+                      SizedBox(height: 5),
+                    ]),
+                    SizedBox(height: 3),
+                    Text("${providerF!.topList[index].catg}",style: TextStyle(fontSize: 15,color: Colors.white54))
+                  ],
+                ),
             leading: Container(
               height:60,
               width: 60,
@@ -49,6 +55,30 @@ class _InstalledScreenState extends State<InstalledScreen> {
                 )
               ),
             ),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("${providerF!.topList[index].reting}\n95K reviews",style: TextStyle(fontSize: 17,color: Colors.white54)),
+                Divider(height: 5,thickness: 2,color: Colors.white70),
+                Text("5M+\nDownloads",style: TextStyle(fontSize: 17,color: Colors.white54)),
+                Divider(height: 5,thickness: 2,color: Colors.white70),
+                Text("E\nEveryone",style: TextStyle(fontSize: 17,color: Colors.white54)),
+              ],
+            ),
+          ),
+          SizedBox(height: 30),
+          Container(
+            height: 40,
+            width: 340,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.green.shade700
+            ),
+            child: Center(child: Text("Install",style: TextStyle(color: Colors.white,fontSize: 20))),
           )
         ],
       ),
